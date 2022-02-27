@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 10</title>
+</head>
+<body>
+Số điện cũ: <input type="text" id="o"><br>
+Số điện mới: <input type="text" id="n"><br>
+<button onclick="tinh()">Tính</button>
+<p id="rs"></p>
+</body>
+</html>
+<script>
+    function tinh(){
+        let a = +document.getElementById("o").value;
+        let b = +document.getElementById("n").value;
+        let x;
+        if (a>b){
+            x = "Nhập lại số liệu";
+        }else {
+            if (b-a<=50){
+                x = "Tiền điện là: "+ eval('(b-a)*1500');
+            }else if (b-a>100){
+                x = "Tiền điện là: "+ eval("50*1500+50*2000+(b-a-100)*2500");
+            }else {
+                x = "Tiền điện là: "+ eval("50*1500+(b-a-50)*2000");
+            }
+        }
+        document.getElementById("rs").innerHTML = (x)
+    }
+</script>

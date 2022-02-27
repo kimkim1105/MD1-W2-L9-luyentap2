@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 11</title>
+</head>
+<body>
+Mức thu nhập/ tháng (triệu đồng): <input type="text" id="tn"><br>
+Số người phụ thuộc: <input type="text" id="pt"><br>
+<button onclick="tinh()">Tính thuế TNCN</button>
+<p id="rs"></p>
+</body>
+</html>
+<script>
+    function tinh(){
+        let tn = +document.getElementById("tn").value;
+        let pt = +document.getElementById("pt").value;
+        let x;
+        let t = tn -11-pt*4.4-tn*0.105;
+        if (tn<=0){
+            x = "Nhập lại dữ liệu";
+        }else {
+            if (t<=0){
+                x = "Không phải đóng thuế";
+            }else if (t<=5){
+                x = "Thuế TNCN phải đóng là: " + eval("t*0.05")+" triệu đồng";
+            }else if (t<=10){
+                x = "Thuế TNCN phải đóng là: " + eval("t*0.1-0.25" + "triệu đồng");
+            }else if (t<=18){
+                x = "Thuế TNCN phải đóng là: " + eval("t*0.15-0.75"+" triệu đồng");
+            }else if (t<=32){
+                x = "Thuế TNCN phải đóng là: " + eval("t*0.2-1.65")+" triệu đồng";
+            }else if(t<=52){
+                x = "Thuế TNCN phải đóng là: " + eval("t*0.25-3.25")+" triệu đồng";
+            }else if (t<=80){
+                x = "Thuế TNCN phải đóng là: " + eval("t*0.3-5.85")+" triệu đồng";
+            }else {
+                x = "Thuế TNCN phải đóng là: " + eval("t*0.35-9.85")+" triệu đồng";
+            }
+        }
+        document.getElementById("rs").innerHTML = (x)
+    }
+</script>

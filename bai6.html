@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<p>Phương trình bậc 1 có dạng: a*x+b=0 </p><br>
+Nhập vào a: <input type="text" id="a"><br>
+Nhập vào b: <input type="text" id="b"><br>
+<button onclick="tinh()">Giải</button>
+<p id="rs"></p>
+</body>
+</html>
+<script>
+    function tinh(){
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        let c;
+        if (a===0&&b!=0){
+            c = "Phương trình vô nghiệm";
+        }else if (a===0&&b===0){
+            c = "Phương trình vô số nghiệm";
+        }else {
+            c = "Nghiệm x của phương trình là: " + eval("-b/a");
+        }
+        document.getElementById("rs").innerHTML = (c)
+    }
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+Nhập vào 3 số a,b,c: <br>
+<input type="text" id="a"><br>
+<input type="text" id="b"><br>
+<input type="text" id="c"><br>
+<button onclick="tinh()">Kiểm tra</button>
+<p id="rs"></p>
+</body>
+</html>
+<script>
+    function tinh(){
+        let a = +document.getElementById("a").value;
+        let b = +document.getElementById("b").value;
+        let c = +document.getElementById("c").value;
+        let x;
+        if ((a>0&&b>0&&c>0)&&(a+b>c&&b+c>a&&a+c>b)){
+            x = "a,b,c là cạnh của một tam giác";
+        }else { x = "a,b,c không là cạnh của một tam giác"}
+        document.getElementById("rs").innerHTML = (x)
+    }
+</script>

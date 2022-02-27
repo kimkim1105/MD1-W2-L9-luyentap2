@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<input type="text" id="s">
+<select name="" id="s1" onchange="tinh()">
+    <option value="met">Met</option>
+    <option value="feet">Feet</option>
+</select>
+<select name="" id="s2" onchange="tinh()">
+    <option value="met">Met</option>
+    <option value="feet">Feet</option>
+</select>
+<button onclick="tinh()">Chuyển đổi</button>
+<p id="rs"></p>
+</body>
+</html>
+<script>
+    function tinh(){
+        let c = document.getElementById("s1").value;
+        let f = document.getElementById("s2").value;
+        let n = +document.getElementById("s").value;
+        let e;
+        if (c===f){
+            e = n
+        }else {
+            if (c=="met"){
+                e = n*3.2808;
+            }else {
+                e = n/3.2808;
+            }
+        }
+        document.getElementById("rs").innerHTML = (e)
+    }
+</script>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+Nhập vào một số nguyên: <input type="text" id="age"><br>
+<button onclick="tinh()">Kiểm tra</button>
+<p id="rs"></p>
+</body>
+</html>
+<script>
+    function tinh(){
+        let a = +document.getElementById("age").value;
+        let x;
+        if (a>0&&a<120){
+            x = "Số nguyên nhập vào là tuổi của một người";
+        }else { x = "Số nguyên nhập vào không phải tuổi của một người"}
+        document.getElementById("rs").innerHTML = (x)
+    }
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+Nhập vào cạnh hình vuông a: <br>
+<input type="text" id="a">
+<button onclick="tinh()">Tính</button>
+<p id="rs"></p>
+</body>
+</html>
+<script>
+    function tinh(){
+        let a = +document.getElementById("a").value;
+        if (a<=0){
+            e = "Nhập lại dữ liệu";
+        }else {
+            e = "Diện tích hình vuông là: " +eval("a*a");
+        }
+        document.getElementById("rs").innerHTML = (e)
+    }
+</script>

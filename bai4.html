@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+Nhập vào cạnh a: <input type="text" id="a"><br>
+Nhập vào cạnh b: <input type="text" id="b"><br>
+<button onclick="tinh()">Tính</button>
+<p id="rs"></p>
+</body>
+</html>
+<script>
+    function tinh(){
+        let a = document.getElementById("a").value;
+        let b = document.getElementById("b").value;
+        if(a<=0||b<=0){
+            e = "Nhập lại dữ liệu";
+        }else {
+            e = "Diện tích hình chữ nhật là: " + eval("a*b");
+        }
+        document.getElementById("rs").innerHTML = (e)
+    }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 12</title>
+</head>
+<body>
+Nhập số tiền gửi: <input type="text" id="g"><br>
+Nhập lãi suất (%/tháng): <input type="text" id="s"><br>
+Nhập số tháng gửi: <input type="text" id="t"><br>
+<button onclick="tinh()">Tính lãi</button>
+<p id="rs"></p>
+</body>
+</html>
+<script>
+    function tinh(){
+        let g = +document.getElementById("g").value;
+        let s = +document.getElementById("s").value;
+        let t = +document.getElementById("t").value;
+        let p = s/100;
+        let x;
+        if (g<=0||s<=0||t<=0){
+            x = "Nhập lại dữ liệu";
+        }else {
+            x = "Tiền lãi là: " + eval("g*Math.pow((1+p),t) -g");
+        }
+        document.getElementById("rs").innerHTML = (x)
+    }
+</script>
